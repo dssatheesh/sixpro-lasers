@@ -1,0 +1,23 @@
+# Build output — regenerate with ./build.ps1 (Windows) or ./build.sh (macOS/Linux).
+# Keeping it out of the repo avoids committing a second copy of every photograph.
+dist/
+
+# Wrangler's local cache — holds your Cloudflare account id. Machine-specific.
+.wrangler/
+
+# Claude Code's per-machine permissions.
+.claude/settings.local.json
+
+# Node, if a tool ever pulls it in. Nothing here needs npm install to run.
+node_modules/
+package-lock.json
+
+# OS and editor cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492 130" role="img" aria-label="SIXPRO">
+  <title>SIXPRO</title>
+  <defs>
+    <!-- polished chrome: light / shadow / light banding is what reads as metal -->
+    <linearGradient id="lsChrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="22%"  stop-color="#DFE7EF"/>
+      <stop offset="46%"  stop-color="#7F8B9A"/>
+      <stop offset="53%"  stop-color="#5C6775"/>
+      <stop offset="62%"  stop-color="#F4F8FC"/>
+      <stop offset="82%"  stop-color="#AEB9C6"/>
+      <stop offset="100%" stop-color="#6E7A88"/>
+    </linearGradient>
+    <linearGradient id="lsChromeEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="50%"  stop-color="#93A0AE"/>
+      <stop offset="100%" stop-color="#E6EDF4"/>
+    </linearGradient>
+    <linearGradient id="lsFace" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%"   stop-color="#12233F"/>
+      <stop offset="55%"  stop-color="#0A1526"/>
+      <stop offset="100%" stop-color="#050B14"/>
+    </linearGradient>
+
+    <linearGradient id="lsRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#FF2D2D" stop-opacity="0"/>
+      <stop offset="42%"  stop-color="#FF3A3A" stop-opacity=".85"/>
+      <stop offset="52%"  stop-color="#FFF1F1" stop-opacity="1"/>
+      <stop offset="62%"  stop-color="#FF3A3A" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#FF2D2D" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lsBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#1E7BFF" stop-opacity="0"/>
+      <stop offset="48%"  stop-color="#48A6FF" stop-opacity=".95"/>
+      <stop offset="56%"  stop-color="#EAF5FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#1E7BFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lsCoreR">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="35%"  stop-color="#FFD9D9" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#FF2020" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lsCoreB">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="40%"  stop-color="#8CC8FF" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#1E7BFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="lsGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+    <clipPath id="lsShieldClip">
+      <path d="M58 8 108 24v40c0 30-19 49-50 60C27 113 8 94 8 64V24z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── shield ── -->
+  <g>
+    <path d="M58 8 108 24v40c0 30-19 49-50 60C27 113 8 94 8 64V24z" fill="url(#lsChromeEdge)"/>
+    <path d="M58 15 101 29v35c0 26-16.5 42.5-43 52.5C31.5 106.5 15 90 15 64V29z" fill="url(#lsFace)"/>
+
+    <!-- the S ribbon -->
+    <g clip-path="url(#lsShieldClip)">
+      <path d="M79 38c-14-5-31-3-33 8-2 10 12 14 23 17s16 8 9 13c-7 5-22 5-31 1"
+            fill="none" stroke="url(#lsChrome)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M79 38c-14-5-31-3-33 8-2 10 12 14 23 17s16 8 9 13c-7 5-22 5-31 1"
+            fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="2.4" stroke-linecap="round"
+            transform="translate(0,-4.2)"/>
+    </g>
+
+    <!-- rim highlight -->
+    <path d="M58 8 108 24v40c0 30-19 49-50 60C27 113 8 94 8 64V24z"
+          fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="1.4"/>
+  </g>
+
+  <!-- ── lens flare: red sweeping up-right, blue burst trailing down-left ── -->
+  <g transform="rotate(-26 74 52)">
+    <!-- red streak, running well past the shield toward the wordmark -->
+    <rect x="-40" y="49.9" width="300" height="4.2" rx="2.1" fill="url(#lsRed)" filter="url(#lsGlow)"/>
+    <rect x="-40" y="51.4" width="300" height="1.2" rx=".6" fill="url(#lsRed)"/>
+    <!-- blue tail, shorter and to the lower-left -->
+    <rect x="-118" y="50.2" width="150" height="3.6" rx="1.8" fill="url(#lsBlue)" filter="url(#lsGlow)"/>
+    <rect x="-118" y="51.5" width="150" height="1" rx=".5" fill="url(#lsBlue)"/>
+    <!-- cross spikes through each core -->
+    <rect x="72.4" y="16" width="3.2" height="72" rx="1.6" fill="url(#lsCoreR)" opacity=".55" filter="url(#lsGlow)"/>
+    <rect x="-8.6" y="66" width="2.4" height="46" rx="1.2" fill="url(#lsCoreB)" opacity=".5" filter="url(#lsGlow)"/>
+  </g>
+
+  <!-- red core -->
+  <circle cx="74" cy="52" r="21" fill="url(#lsCoreR)" opacity=".55"/>
+  <circle cx="74" cy="52" r="11" fill="url(#lsCoreR)"/>
+  <circle cx="74" cy="52" r="3.6" fill="#FFFFFF"/>
+  <!-- blue core -->
+  <circle cx="30" cy="92" r="17" fill="url(#lsCoreB)" opacity=".6"/>
+  <circle cx="30" cy="92" r="8.5" fill="url(#lsCoreB)"/>
+  <circle cx="30" cy="92" r="2.8" fill="#F2F9FF"/>
+
+  <!-- ── wordmark ── -->
+  <text x="138" y="86"
+        font-family="'Barlow Condensed','Arial Narrow',Impact,sans-serif"
+        font-size="76" font-weight="700" font-style="italic"
+        letter-spacing="1.5" fill="url(#lsChrome)">SIXPRO</text>
+</svg>

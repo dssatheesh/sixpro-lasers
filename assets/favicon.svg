@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 130">
+  <defs>
+    <linearGradient id="fEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="50%" stop-color="#93A0AE"/>
+      <stop offset="100%" stop-color="#E6EDF4"/>
+    </linearGradient>
+    <linearGradient id="fFace" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#12233F"/><stop offset="100%" stop-color="#050B14"/>
+    </linearGradient>
+    <linearGradient id="fChrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="46%" stop-color="#7F8B9A"/>
+      <stop offset="62%" stop-color="#F4F8FC"/><stop offset="100%" stop-color="#6E7A88"/>
+    </linearGradient>
+    <clipPath id="fClip">
+      <path d="M58 8 108 24v40c0 30-19 49-50 60C27 113 8 94 8 64V24z"/>
+    </clipPath>
+  </defs>
+  <path d="M58 8 108 24v40c0 30-19 49-50 60C27 113 8 94 8 64V24z" fill="url(#fEdge)"/>
+  <path d="M58 15 101 29v35c0 26-16.5 42.5-43 52.5C31.5 106.5 15 90 15 64V29z" fill="url(#fFace)"/>
+  <g clip-path="url(#fClip)">
+    <path d="M79 38c-14-5-31-3-33 8-2 10 12 14 23 17s16 8 9 13c-7 5-22 5-31 1"
+          fill="none" stroke="url(#fChrome)" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <!-- flare core, simplified so it survives at 16px -->
+  <circle cx="76" cy="46" r="13" fill="#FF3A3A" opacity=".55"/>
+  <circle cx="76" cy="46" r="5" fill="#FFFFFF"/>
+</svg>

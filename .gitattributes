@@ -1,0 +1,16 @@
+# Normalise line endings so the same file does not look "fully rewritten" when it
+# moves between Windows and macOS/Linux. Text is stored with LF in the repo and
+# checked out however the local platform prefers.
+* text=auto
+
+# These keep LF even on Windows — shell scripts break with CRLF.
+*.sh text eol=lf
+
+# Binary: never touch, never try to diff.
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.ico  binary
+*.woff  binary
+*.woff2 binary

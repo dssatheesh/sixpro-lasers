@@ -1,0 +1,30 @@
+# Cloudflare Pages — response headers.
+# Path-matched, first match per header wins. Keep this file at the project root;
+# it is config, not content, and is never served to visitors.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-ancestors 'self'
+
+# HTML must revalidate every time, or edits will not reach returning visitors.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# CSS and JS change whenever the site is edited and the filenames never change,
+# so keep the window short and let ETags do the rest.
+/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+/js/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Photography changes rarely. A day of caching, then serve the stale copy for up
+# to a week while a fresh one is fetched in the background.
+/assets/img/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/assets/*.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
