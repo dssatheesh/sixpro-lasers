@@ -1,7 +1,9 @@
 # Normalise line endings so the same file does not look "fully rewritten" when it
-# moves between Windows and macOS/Linux. Text is stored with LF in the repo and
-# checked out however the local platform prefers.
-* text=auto
+# moves between Windows and macOS/Linux. LF both in the repo and in the working
+# copy, on every platform — that way a build on Windows and a build on macOS
+# produce byte-identical files, which keeps deploys and ETags consistent.
+# Every editor worth using on Windows handles LF; only Notepad ever struggled.
+* text=auto eol=lf
 
 # These keep LF even on Windows — shell scripts break with CRLF.
 *.sh text eol=lf
