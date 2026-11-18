@@ -11,7 +11,7 @@ index.html          all content and structured data
 css/styles.css      design system + responsive layouts
 js/main.js          config, animations, gallery, RFQ form
 assets/img/         optimised photography (WebP + JPEG fallback)
-assets/favicon.svg
+assets/sixpro-mark.png/.webp, favicon-64.png, apple-touch-icon.png
 robots.txt, sitemap.xml
 ```
 
@@ -172,9 +172,9 @@ needs no image request.
 
 | Where | What |
 |---|---|
-| `index.html` | `<symbol id="sixproMark">` near the top of `<body>` — defined once, `<use>`d by the nav and footer |
-| `assets/logo-sixpro.svg` | full horizontal lockup (mark + `SIXPRO` wordmark) for decks, invoices, email signatures |
-| `assets/favicon.svg` | simplified mark that still reads at 16 px |
+| `assets/sixpro-mark.png` + `.webp` | the logo emblem (256 px, rounded), used by the nav and footer |
+| `assets/logo-sixpro.svg` | previous shield lockup, kept for reference; no longer used on the site |
+| `assets/favicon-64.png`, `assets/apple-touch-icon.png` | browser-tab and phone home-screen icons, from the same logo |
 
 The wordmark in the nav and footer is live text styled with a chrome gradient
 (`.brand__text strong` in `css/styles.css`), not an image — so it stays selectable,

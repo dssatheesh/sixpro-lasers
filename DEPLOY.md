@@ -166,8 +166,8 @@ UPLOAD                          SKIP
   js/main.js                      README.md
   robots.txt                      DEPLOY.md
   sitemap.xml
-  assets/favicon.svg
-  assets/logo-sixpro.svg
+  assets/sixpro-mark.png, sixpro-mark.webp
+  assets/favicon-64.png, apple-touch-icon.png
   assets/img/*.webp  *.jpg
   assets/img/CREDITS.md         <- keep: the footer links to it
   _headers                      <- keep: Cloudflare Pages reads it
