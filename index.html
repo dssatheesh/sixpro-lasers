@@ -951,6 +951,27 @@
     </a>
     <noscript><p class="map__fallback">Enable JavaScript to view the map, or <a href="https://maps.app.goo.gl/Wui1opSepR8peHcM9">open our location on Google Maps</a>.</p></noscript>
   </div>
+
+  <!-- Directions search: opens Google Maps with a route to the unit.
+       Works without JS too (plain GET form to Google Maps). -->
+  <div class="wrap">
+    <form class="route reveal" id="routeForm" action="https://www.google.com/maps/dir/" method="get" target="_blank" rel="noopener">
+      <input type="hidden" name="api" value="1">
+      <input type="hidden" name="destination" value="13.0157139,77.5017304" data-contact="route-dest">
+      <input type="hidden" name="travelmode" value="driving">
+      <label class="route__field">
+        <span class="route__label">Find your route to SIXPRO</span>
+        <span class="route__input">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="text" name="origin" id="routeFrom" autocomplete="street-address" placeholder="Your address or pincode">
+        </span>
+      </label>
+      <div class="route__btns">
+        <button class="btn btn--primary" type="submit">Get Directions</button>
+        <button class="btn btn--ghost" type="button" id="routeHere">Use my location</button>
+      </div>
+    </form>
+  </div>
 </section>
 
 </main>

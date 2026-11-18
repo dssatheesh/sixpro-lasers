@@ -134,6 +134,7 @@
     if (!frame) return;
 
     $$('a[data-contact="map-link"]').forEach(a => { a.href = SITE.mapLink; });
+    initRoute();
     const load = () => {
       frame.src = 'https://www.google.com/maps?q=' +
                   encodeURIComponent(SITE.mapQuery) + '&output=embed';
@@ -146,6 +147,29 @@
     } else {
       load();
     }
+  }
+
+  // Directions search: builds a Google Maps directions URL and opens it in a
+  // new tab. An empty origin makes Google route from the visitor's current
+  // location, which is what "Use my location" relies on.
+  function initRoute() {
+    const form = $('#routeForm');
+    if (!form) return;
+    $$('[data-contact="route-dest"]').forEach(i => { i.value = SITE.mapQuery; });
+    const open = (origin) => {
+      const url = 'https://www.google.com/maps/dir/?api=1' +
+        (origin ? '&origin=' + encodeURIComponent(origin) : '') +
+        '&destination=' + encodeURIComponent(SITE.mapQuery) + '&travelmode=driving';
+      window.open(url, '_blank', 'noopener');
+    };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const from = $('#routeFrom').value.trim();
+      if (!from) { $('#routeFrom').focus(); return; }
+      open(from);
+    });
+    const here = $('#routeHere');
+    if (here) here.addEventListener('click', () => open(''));
   }
 
   /* ────────────────────────────────────────────────────────────
