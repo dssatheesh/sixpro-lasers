@@ -21,6 +21,9 @@ foreach ($f in 'index.html', 'robots.txt', 'sitemap.xml', '_headers') {
 foreach ($d in 'css', 'js', 'assets') {
     Copy-Item (Join-Path $root $d) -Destination $dist -Recurse
 }
+# Google Search Console ownership file(s), e.g. google1234abcd.html.
+# Must stay at the site root and must not be deleted, or verification lapses.
+Get-ChildItem $root -Filter 'google*.html' | Copy-Item -Destination $dist
 
 # Stamp the version token. index.html in the repo keeps whatever token it has;
 # only the deployed copy is rewritten, so every deploy is a new URL for the

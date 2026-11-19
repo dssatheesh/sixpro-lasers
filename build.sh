@@ -18,6 +18,10 @@ mkdir -p "$dist"
 cp "$root/index.html" "$root/robots.txt" "$root/sitemap.xml" "$root/_headers" "$dist/"
 cp -r "$root/css" "$root/js" "$root/assets" "$dist/"
 
+# Google Search Console ownership file(s), e.g. google1234abcd.html.
+# Must stay at the site root and must not be deleted, or verification lapses.
+for g in "$root"/google*.html; do [ -f "$g" ] && cp "$g" "$dist/"; done
+
 # Stamp the version token. index.html in the repo keeps whatever token it has;
 # only the deployed copy is rewritten, so every deploy is a new URL for the
 # browser and it cannot serve you a stale styles.css or main.js.
