@@ -626,6 +626,7 @@ p:last-child{ margin-bottom:0; }
 }
 .matcard h3{ font-size:1.15rem; margin-bottom:.6rem; }
 .matcard__thick{ font-family:var(--font-d); font-size:2.9rem; font-weight:700; line-height:1; margin:0; color:var(--text); }
+.matcard__from{ color:var(--text-soft); }
 .matcard__thick i{ font-style:normal; font-size:1rem; color:var(--amber-2); margin-left:3px; }
 .matcard__cap{ font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:.4rem 0 1.1rem; }
 
